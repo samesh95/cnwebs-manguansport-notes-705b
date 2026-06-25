@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>满冠体育 · 知识库入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafaf9;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1c1c1e;
+      line-height: 1.7;
+      padding: 2.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* 标题层级——清晰、克制 */
+    h1 {
+      font-size: 2rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+      color: #121212;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e6e4e0;
+      padding-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 490;
+      margin-top: 0.2rem;
+      margin-bottom: 0.4rem;
+      color: #2e2e30;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #3a3a3c;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #6b6b6d;
+      margin-bottom: 1.8rem;
+      font-weight: 400;
+    }
+
+    /* 卡片式目录区块 */
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin: 1.8rem 0 2rem 0;
+    }
+
+    .toc-item {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      border: 1px solid #ecebe8;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .toc-item:hover {
+      border-color: #cbc9c4;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+    }
+
+    .toc-item strong {
+      display: block;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+      color: #1f1f21;
+    }
+
+    .toc-item span {
+      font-size: 0.85rem;
+      color: #6e6e70;
+      line-height: 1.5;
+    }
+
+    /* 提示 & 相关信息 */
+    .note-box {
+      background: #f3f2ef;
+      border-left: 4px solid #a09e98;
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.8rem 0 1.2rem 0;
+    }
+
+    .note-box p {
+      margin-bottom: 0.2rem;
+      font-size: 0.92rem;
+    }
+
+    .info-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin: 1.2rem 0 1.8rem 0;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-size: 0.93rem;
+    }
+
+    .info-row .label {
+      font-weight: 480;
+      color: #3b3b3d;
+      min-width: 5.5rem;
+    }
+
+    .info-row .value {
+      color: #505052;
+    }
+
+    .accent-link {
+      color: #1f1f21;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b9b7b0;
+      transition: text-decoration-color 0.2s;
+    }
+
+    .accent-link:hover {
+      text-decoration-color: #1f1f21;
+    }
+
+    .faq-short {
+      margin: 1.5rem 0 1.8rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .faq-short li {
+      margin-bottom: 0.9rem;
+      font-size: 0.93rem;
+    }
+
+    .faq-short li strong {
+      font-weight: 490;
+      color: #1f1f21;
+    }
+
+    .faq-short li .q {
+      color: #3a3a3c;
+    }
+
+    .footer-note {
+      font-size: 0.82rem;
+      color: #8a8a8c;
+      margin-top: 3rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e6e4e0;
+      text-align: left;
+    }
+
+    /* 窄屏适配 */
+    @media (max-width: 540px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .toc-grid {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+      }
+      .info-row {
+        flex-wrap: wrap;
+        gap: 0.2rem;
+      }
+      .info-row .label {
+        min-width: 4.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>满冠体育 · 简明指南</h1>
+  <p class="subhead">知识库入口 · 目录 &amp; 访问提醒</p>
+
+  <!-- 简短介绍 —— 自然引出链接 -->
+  <p>
+    <a href="https://cnwebs-manguansport.com" class="accent-link">满冠体育</a> 
+    围绕体育项目、运动数据与赛事信息构建内容体系。以下索引覆盖主要分类与常用说明，帮助你快速定位所需内容。
+  </p>
+
+  <!-- 目录感布局：卡片网格 -->
+  <h2>内容索引</h2>
+  <div class="toc-grid">
+    <div class="toc-item">
+      <strong>项目百科</strong>
+      <span>田径、球类、水上运动 — 规则、历史、场地标准</span>
+    </div>
+    <div class="toc-item">
+      <strong>赛事日历</strong>
+      <span>国内外重点赛事时间、分级、赛制摘要</span>
+    </div>
+    <div class="toc-item">
+      <strong>训练参考</strong>
+      <span>基础体能、专项技术、恢复与营养原则</span>
+    </div>
+    <div class="toc-item">
+      <strong>术语汇编</strong>
+      <span>常用缩写、技术名词、评分体系说明</span>
+    </div>
+  </div>
+
+  <!-- 说明区 —— 窄正文宽度下自然呈现 -->
+  <h2>关于本知识库</h2>
+  <p>
+    内容以公开资料与体育机构发布的官方准则为参考，逐条整理，并标注来源版本。每篇条目均注明最后更新日期，部分条目附有简短示例或对照表。
+  </p>
+  <p>
+    如果你对某项运动的基础规则、历史沿革或数据口径有疑问，可以优先通过上方索引查找对应分类。尚未收录的条目会以“待补充”标记。
+  </p>
+
+  <!-- 提示区 -->
+  <div class="note-box">
+    <p><strong>访问提示</strong></p>
+    <p>建议使用桌面浏览器或平板设备访问，以获得更完整的排版与表格预览效果。移动端阅读时，部分宽表可横向滑动翻阅。</p>
+    <p style="margin-top: 0.5rem;">页面链接结构稳定——直接输入域名或书签保存均可直达 <a href="https://cnwebs-manguansport.com" class="accent-link">满冠体育</a> 首页。</p>
+  </div>
+
+  <!-- 相关信息区：高频问题摘要 + 目录式字段 -->
+  <h2>相关信息</h2>
+
+  <ul class="faq-short">
+    <li><strong>Q: </strong><span class="q">如何查找某一项运动的最新年份规则？</span><br>→ 在“项目百科”中按运动名称查找，规则段落包含版本年份与修订说明。</li>
+    <li><strong>Q: </strong><span class="q">赛事日历中的“待确认”状态指什么？</span><br>→ 指举办方尚未公布最终日期或赛程，信息确认后会更新状态。</li>
+    <li><strong>Q: </strong><span class="q">训练参考部分是否有难度分级？</span><br>→ 目前按“入门/进阶”两级区分，部分条目附带推荐训练周期。</li>
+    <li><strong>Q: </strong><span class="q">术语汇编是否包含多语言对照？</span><br>→ 部分术语附英文/日文对照，以原文稳定用法为准。</li>
+  </ul>
+
+  <!-- 信息行：简洁目录式字段 -->
+  <div class="info-group">
+    <div class="info-row">
+      <span class="label">条目总数</span>
+      <span class="value">270+（持续补充中）</span>
+    </div>
+    <div class="info-row">
+      <span class="label">更新周期</span>
+      <span class="value">每月中旬集中更新，重要变动即时修订</span>
+    </div>
+    <div class="info-row">
+      <span class="label">内容许可</span>
+      <span class="value">仅供参考与学习，引用请标注出处</span>
+    </div>
+    <div class="info-row">
+      <span class="label">反馈通道</span>
+      <span class="value">页面底部设有邮箱表单（即将开放）</span>
+    </div>
+  </div>
+
+  <!-- 第二次出现链接（自然嵌入在段落中） -->
+  <p style="font-size: 0.92rem; color: #5f5f61; margin-top: 1.2rem;">
+    如对知识库结构或具体条目有建议，欢迎通过 <a href="https://cnwebs-manguansport.com" class="accent-link">满冠体育</a> 提供的联系方式提交反馈意见。
+  </p>
+
+  <div class="footer-note">
+    本页为知识库入口版本 · 内容基于通用体育资料整理 · 仅供学习参考
+  </div>
+</div>
+</body>
+</html>
